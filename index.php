@@ -15,7 +15,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-2">
+        <div class="row">
+            <h1 class="text-center">Proyecto CRUD 🧛🏻</h1>
+        </div>
         <div class="row">
             <div class="col-md-3">
                 <h1>Ingresa los datos</h1>
@@ -38,6 +41,9 @@
                 </form>
             </div>
             <div class="col-md-8">
+                <div class="row">
+                    <h3 class="text-center">Alumnos del Sistema</h3>
+                </div>
                 <table class="table">
                     <thead class="table-success table-striped">
                         <tr>
@@ -60,8 +66,11 @@
                             <td><?php echo $row['nombre'] ?></td>
                             <td><?php echo $row['apellidos'] ?></td>
                             <td>
-                                <a href="actualizar.php?id=<?php echo $row['cod_estudiante']?>" class="btn bt-warning">Editar</a>
-                                <a href="delete.php?id=<?php echo $row['cod_estudiante']?>" class="btn bt-danger">Borrar</a>
+                                <a href="actualizar.php?id=<?php echo $row['cod_estudiante']?>" class="btn btn-warning">Editar</a>
+                                |
+                                <a href="delete.php?id=<?php echo $row['cod_estudiante']?>" class="btn btn-danger"
+                                      onclick="return confirm('¿Estás seguro de que quieres borrarlo?');"
+                                >Borrar</a>
                             </td>
                         </tr>
                         <?php
